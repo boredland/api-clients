@@ -28,7 +28,7 @@ export class APIBase {
   }
 
   protected checkApiKey(apiName?: string): void {
-    apiName = `the "${apiName}"` || 'this';
+    apiName = apiName ? `the "${apiName}"` : 'this';
     if (!this.options.apiKey) {
       throw new Error(`An API key needs to be set in order to use ${apiName} API`);
     }

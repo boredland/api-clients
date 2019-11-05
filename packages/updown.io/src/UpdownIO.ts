@@ -19,7 +19,7 @@ export class UpdownIO {
     });
 
     this.apiClient.interceptors.request.use(config => {
-      if (options && (options as ClientOptions).apiKey) {
+      if ((options as ClientOptions)?.apiKey) {
         config.headers = {
           ...config.headers,
           'X-API-KEY': (options as ClientOptions).apiKey,
